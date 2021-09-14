@@ -15,12 +15,20 @@ set background=dark
 call plug#begin('~/.vim/plugged')
 	
 	
+    Plug 'vim-airline/vim-airline-themes'	
     Plug 'preservim/nerdtree' 	
-	Plug 'ryanoasis/vim-devicons'
-	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    Plug 'vim-airline/vim-airline'
+    Plug 'morhetz/gruvbox'
 
 call plug#end()
 
 nmap <C-n> :NERDTree<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+
+let g:gruvbox_contrast_dark="hard"
+let ayucolor="dark"
+colorscheme gruvbox
 
