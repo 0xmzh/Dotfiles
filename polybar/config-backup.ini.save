@@ -1,0 +1,258 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;														;;
+;;				 ___  __  _ __   ____  __  ___  		;;
+;;				| _,\/__\| |\ `v' /  \/  \| _ \ 		;;
+;;				| v_/ \/ | |_`. .'| -< /\ | v / 		;;
+;;				|_|  \__/|___|!_! |__/_||_|_|_\ 		;;
+;;														;;
+;;														;;
+;;   		 created by: 					 	 	    ;;
+;;					reddit.com/u/vertt_t			    ;;
+;;													    ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;-       colors       -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[color]
+
+bg = #202330
+bg1 = #a39bbc
+bg2 = #8991c4
+bg3 = #ffc1c6
+bg4 = #cca9bc
+bg5 = #e4b2bc
+fg = #FFFFFF
+alpha = #00000000
+
+acolor = #ffc1c6
+acolor1 = #59a2c8
+
+curgent = #EF5350
+coccupied = #42A5F5
+
+shade1 = #c4ac9c
+shade2 = #56778c
+
+txt = #FFFFFF
+txt1 = #010101
+
+black = #2e3033
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ;-     colors end     -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; ;-      main bar      -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[bar/main]
+width = 99%
+height = 36.5
+offset-x = 0.5%
+offset-y = 1%
+bottom = false
+fixed-center = true
+line-size = 5
+
+
+background = ${color.alpha}
+foreground = ${color.fg}
+
+
+spacing = 0
+module-margin-left = 0
+module-margin-right = 0
+padding = 0
+
+radius-top = 4
+radius-bottom = 4
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;-    main bar end    -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;-       fonts        -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+font-0 = "Terminus(TTF):pixelsize=9;3"
+font-1 = "Iosevka Nerd Font:pixelsize=10;3"
+font-2 = "FontAwesome5:pixelsize=10;3"
+
+font-3 = "Terminus(TTF):pixelsize=23;5"
+font-4 = "Iosevka Nerd Font:pixelsize=23;5"
+font-5 = "FontAwesome5:pixelsize=23;5"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;-      fonts end     -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;-   bspwm-settings   -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+enable-ipc = true
+cursor-click = pointer
+
+scroll-up = bspwm.next
+scroll-down = bspwm.prev
+
+wm-restack = bspwm
+;override-redirect = true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;- bspwm-settings end -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;-   module position  -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+modules-left = vpn-status rounded-right-colored 
+modules-center =  rounded-left-colored workspaces rounded-right-colored
+modules-right = rounded-left-colored-two date septime time
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;- module position end-; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+ 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;-       modules      -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;-     workspaces     -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/workspaces]
+type = internal/xworkspaces
+pin-workspaces = true
+enable-click = true
+enable-scroll = true
+format-padding = 1
+
+icon-1 = >
+;icon-default = 
+
+format = <label-state>
+format-background = ${color.black}
+label-active = 
+label-occupied = 
+label-urgent = 
+label-empty = 
+
+label-empty-padding = 1
+label-active-padding = 1
+label-urgent-padding = 1
+label-occupied-padding = 1
+
+label-empty-foreground = ${color.fg}
+label-active-foreground = ${color.acolor}
+label-urgent-foreground = ${color.curgent}
+label-occupied-foreground = ${color.fg}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;-   workspaces end   -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;-       spotify      -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/vpn-status]
+type = custom/script
+tail = true
+format-prefix = ""
+format-prefix-foreground = ${color.acolor}
+format = <label>
+exec = ~/.config/bin/vpn_status.sh
+
+format-background = ${color.black}
+format-foreground = ${color.txt}
+format-padding = 4
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;-     spotity end    -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+[module/date]
+type = internal/date
+interval = 1.0
+label =  %date%
+label-padding = 0
+label-background = ${color.bg5}
+label-foreground = ${color.black}
+date =  %a %d/%m%
+
+ramp-date-0 = 
+
+[module/septime]
+type = custom/text
+content = - - 
+content-background = ${color.bg5}
+content-foreground = ${color.black}
+content-padding = 1
+
+[module/time]
+type = internal/date
+interval = 1.0
+label =  %time%
+label-padding-right = 2
+label-background = ${color.bg5}
+label-foreground = ${color.black}
+time =  %k:%M
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;-    time/date end   -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;-    separator end   -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;-       rounded      -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/rounded-right-colored]
+type = custom/text
+content = %{T5}%{T-}
+content-foreground = ${color.black}
+content-background = ${color.alpha}
+
+
+[module/rounded-right-colored-two]
+type = custom/text
+content = %{T5}%{T-}
+content-foreground = ${color.black}
+content-background = ${color.bg1}
+
+[module/rounded-left-colored]
+type = custom/text
+content = %{T5}%{T-}
+content-foreground = ${color.black}
+content-background = ${color.alpha}
+
+[module/rounded-left-colored-two]
+type = custom/text
+content = %{T5}%{T-}
+content-foreground = ${color.bg5}
+content-background = ${color.alpha}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;-     rounded end    -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;-    modules end     -; ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
