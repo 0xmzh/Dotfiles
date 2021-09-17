@@ -2,12 +2,18 @@
 # wm independent hotkeys
 #
 
+# BurpSuite(tabien puedes crear un alias para acortar el comdando)
+super + shift + b
+        java -javaagent:/home/roma/BurpSuite/BurpSuiteLoader_v2021.8.jar -noverify -jar /home/roma/BurpSuite/burpsuite_pro_v2021.8.jar
+
+# fzf
 ctrl + t
     fzf	
  
 # terminal emulator
 super + Return
     qterminal
+
 # Firefox
 super + shift + f
     firejail /opt/firefox/firefox
