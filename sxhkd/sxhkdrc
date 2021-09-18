@@ -2,6 +2,10 @@
 # wm independent hotkeys
 #
 
+# Screenshot
+super + shitf + p
+    /usr/bin/flameshot gui
+
 # BurpSuite Pro (tabien puedes crear un alias para acortar el comdando)
 super + shift + b
     java -javaagent:/home/roma/BurpSuite/BurpSuiteLoader_v2021.8.jar -noverify -jar /home/roma/BurpSuite/burpsuite_pro_v2021.8.jar
