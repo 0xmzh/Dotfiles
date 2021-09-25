@@ -1,7 +1,7 @@
 # Dotfiles
 Files in .config
 
-Para arreglar el problema de BurpSuite.
+### Para arreglar el problema de BurpSuite.
 
 
 
@@ -13,7 +13,8 @@ Tiene que ser el la .zshrc y cambiar Java
 
 Poner el teclado en Español Latino
 `setxkbmap latam`
-Cambiar la resolucion de la pantalla
+
+### Cambiar la resolucion de la pantalla
 
 `xrandr --size 1368x768`
 xrandr es un complemento de xorg
