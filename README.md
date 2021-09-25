@@ -14,6 +14,6 @@ Tiene que ser el la .zshrc y cambiar Java
 Poner el teclado en Español Latino
 `setxkbmap latam`
 Cambiar la resolucion de la pantalla
-`xrandr`
+
 `xrandr --size 1368x768`
-xranr es un complemento de xorg
+xrandr es un complemento de xorg
