@@ -9,4 +9,4 @@ Para arreglar el problema de BurpSuite.
 
 Tiene que ser el la .zshrc y cambiar Java
 
-´update-alternatives --config java´
+`update-alternatives --config java`
