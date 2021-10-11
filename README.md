@@ -1,6 +1,8 @@
 # Dotfiles
 Files in .config
 
+las HackNerdFonts van en /usr/local/share/fonts
+
 ### Arreglar el problema de BurpSuite.
 
 
