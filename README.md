@@ -20,3 +20,16 @@ Tiene que ser en la .zshrc y cambiar Java
 
 `xrandr --size 1368x768`
 xrandr es un complemento de xorg
+
+Para el target, agregar en la .zshrc
+```
+# target polybar
+function ontarget(){
+    target=$1
+    echo "$target" > /home/roma/.config/bin/target
+}
+
+function offtarget(){
+    echo "" > /home/roma/.config/bin/target
+}
+````
