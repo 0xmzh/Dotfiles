@@ -5,6 +5,21 @@ las HackNerdFonts van en `/usr/local/share/fonts`
 themes para gtk `/usr/share/themes`
 icons para gtk `/usr/share/icons`
 
+### Instalar paquetes
+`sudo apt-get install bspwm polybar suckless-tools`
+
+```
+mkdir ~/.config/bspwm
+mkdir ~/.config/sxhkd
+mkdir ~/.config/polybar
+
+cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
+cp /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/
+cp /usr/share/doc/polybar/config ~/.config/polybar/
+
+```
+
+
 ### Arreglar el problema de BurpSuite.
 
 
