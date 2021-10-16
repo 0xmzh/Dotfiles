@@ -43,10 +43,10 @@ Para el target, agregar en la .zshrc
 # target polybar
 function ontarget(){
     target=$1
-    echo "$target" > /home/roma/.config/bin/target
+    echo "$target" > /home/roma/.config/polybar/scripts/target
 }
 
 function offtarget(){
-    echo "" > /home/roma/.config/bin/target
+    echo "" > /home/roma/.config/polybar/scripts/target
 }
 ````
