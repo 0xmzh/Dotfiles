@@ -2,6 +2,8 @@
 Files in .config
 
 las HackNerdFonts van en `/usr/local/share/fonts`
+themes para gtk `/usr/share/themes`
+icons para gtk `/usr/share/icons`
 
 ### Arreglar el problema de BurpSuite.
 
