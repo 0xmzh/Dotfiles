@@ -3,28 +3,28 @@
 #
 
 # Screenshot
-super + shitf + p
-    /usr/bin/flameshot gui
+ctrl + shift + p
+    flameshot gui
 
 # BurpSuite Pro (tabien puedes crear un alias para acortar el comdando)
 super + shift + b
     java -javaagent:/home/roma/BurpSuite/BurpSuiteLoader_v2021.8.jar -noverify -jar /home/roma/BurpSuite/burpsuite_pro_v2021.8.jar
-
-# fzf
-ctrl + t
-    fzf	
  
 # terminal emulator
 super + Return
-    qterminal
+    mate-terminal
+
+#
+super + shift + m
+    /opt/Telegram/Telegram
 
 # Firefox
 super + shift + f
-    firejail /opt/firefox/firefox
+    firefox
  
 # program launcher
 super + d
-    rofi -show run
+    rofi -show drun
  
 # make sxhkd reload its configuration files:
 super + Escape
