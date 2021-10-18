@@ -10,7 +10,9 @@ bg1 = #a39bbc
 bg2 = #8991c4
 bg3 = #ffc1c6
 bg4 = #cca9bc
-bg5 = #e4b2bc
+bg55 = #aa000000
+bg5 = #aa000000
+;#aae4b2bc
 fg = #FFFFFF
 alpha = #00000000
 
@@ -26,9 +28,12 @@ shade2 = #56778c
 txt = #FFFFFF
 txt1 = #010101
 
-black = #2e3033
-blue = #00bfff
-rose = #dc143c
+blackO = #000000
+blackt = #aa000000
+black =  #aa2c3e50  
+;#4e4e59
+blue = #aa00bfff
+rose = #aadc143c
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; ;-     colors end     -; ;;
@@ -104,9 +109,9 @@ wm-restack = bspwm
 ;; ;-   module position  -; ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-modules-left = target decor1 vpn-status rounded-right-colored 
+modules-left = target decor2 vpn-status decor1 decor11 network rounded-right-colored-two 
 modules-center =  rounded-left-colored workspaces rounded-right-colored
-modules-right = rounded-left-colored cpu decor3  ram decor4 date decor3 time
+modules-right = rounded-left-colored-two icon battery decor4 cpu decor3  ram decor4 date decor3 time
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ;- module position end-; ;;
@@ -129,7 +134,7 @@ enable-scroll = true
 format-padding = 1
 
 format = <label-state>
-format-background = ${color.black}
+format-background = ${color.blackt}
 
 
 label-empty-padding = 2 
@@ -174,12 +179,54 @@ format = <label>
 exec = ~/.config/polybar/scripts/target.sh  
 
 format-background = ${color.bg5}
-format-foreground = ${color.black}
+format-foreground = ${color.fg}
 format-padding = 0
  
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/icon]
+type = custom/text
+content = "%{T2} %{T-}"
+content-foreground = ${color.fg}
+content-background = ${color.bg5}
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT0
+adapter = ADP1
+poll-interval = 5
+format-discharging-background = ${color.bg5}
+format-discharging-foreground = ${color.fg}
+format-charging-background = ${color.bg5}
+format-charging-foreground = ${color.fg}
+
+;format-discharging-background = #444
+;format-discharging-foreground = ${colors.fg9}
+;format-charging-background = #444
+;format-charging-foreground = ${colors.fg9}
+;format-background = #444
+;format-foreground = ${colors.fg9}
+;label-charging-background = #444
+;label-charging-foreground = ${colors.fg9}
+;label-discharging-background = #444
+;label-discharging-foreground = ${colors.fg9}
+;label-foreground = ${colors.fg9}
+;label-background = #444
+;label-empty-background = #444
+
+
+
+[module/network]
+type = internal/network
+interface = wlan0
+interval = 1.0
+label-connected = " %downspeed%  %upspeed% "
+label-disconnected = disconnected
+label-connected-background = ${color.bg5}
+label-connected-foreground = ${color.fg}
 
 [module/cpu]
 type = internal/cpu
@@ -187,15 +234,15 @@ label = "  %{A1:$TERMINAL -e htop >/dev/null 2>&1 &:}%percentage%%%{A}  "
 interval = 1 
 format = <label>
 label-background = ${color.black}
-;label-foreground = ${color.black}
-label-padding = 0wq 
+label-foreground = ${color.blackO}
+label-padding = 0 
 
 [module/ram]
 type = internal/memory
 label = "神 %mb_used%" 
 ;label = "神 %gb_used%/%gb_total%  " 
 label-background = ${color.bg5}
-label-foreground = ${color.black}
+label-foreground = ${color.fg}
 format-padding = 0
 format = <label>
 interval = 0.5
@@ -207,7 +254,7 @@ interval = 1.0
 label = %date%
 label-padding = 0
 label-background = ${color.black}
-;label-foreground = ${color.black}
+label-foreground = ${color.blackO}
 date = "  %a %d/%m/%y"
 
 ramp-date-0 = 
@@ -216,7 +263,7 @@ ramp-date-0 =
 type = custom/text
 content = - -
 content-background = ${color.bg5}
-content-foreground = ${color.black}
+content-foreground = ${color.fg}
 content-padding = 1
 
 [module/time]
@@ -225,7 +272,7 @@ interval = 1.0
 label =  %time%
 label-padding-right = 2
 label-background = ${color.bg5}
-label-foreground = ${color.black}
+label-foreground = ${color.fg}
 time =  %k:%M
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -243,7 +290,7 @@ time =  %k:%M
 [module/rounded-right-colored]
 type = custom/text
 content = %{T5}%{T-}
-content-foreground = ${color.black}
+content-foreground = ${color.blackt}
 content-background = ${color.alpha}
 
 
@@ -256,7 +303,7 @@ content-background = ${color.alpha}
 [module/rounded-left-colored]
 type = custom/text
 content = %{T5}%{T-}
-content-foreground = ${color.black}
+content-foreground = ${color.blackt}
 content-background = ${color.alpha}
 
 [module/rounded-left-colored-two]
@@ -268,16 +315,14 @@ content-background = ${color.alpha}
 [module/decor1]
 type = custom/text
 content = "%{T5}%{T-}"
-content-foreground = ${color.bg5}
-content-background = ${color.black}
+content-foreground = ${color.black}
+content-background = ${color.bg5}
 
-
-
-;[module/decor2]
-;type = custom/text
-;content = "%{T5}%{T-}"
-;content-foreground = ${color.black}
-;content-padding = 0
+[module/decor2]
+type = custom/text
+content = "%{T5}%{T-}"
+content-foreground = ${color.black}
+content-background = ${color.bg5}
 
 
 [module/decor3]
