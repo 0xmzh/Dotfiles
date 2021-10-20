@@ -1,4 +1,8 @@
 
+
+source /home/roma/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source /home/roma/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 export _JAVA_ATW_WM_NONREPARENTING=1
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -283,3 +287,5 @@ function ontarget(){
 function offtarget(){
     echo "" > /home/roma/.config/bin/target
 }
+
+
