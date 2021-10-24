@@ -281,11 +281,11 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # target polybar
 function ontarget(){
     target=$1
-    echo "$target" > /home/roma/.config/bin/target
+    echo "$target" > /home/roma/.config/polybar/scripts/target
 }
 
 function offtarget(){
-    echo "" > /home/roma/.config/bin/target
+    echo " Disconnected" > /home/roma/.config/polybar/scripts/target
 }
 
 
