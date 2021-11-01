@@ -127,9 +127,8 @@ super + {_,shift + }{1-9,0}
 #
  
 # preselect the direction
-super + ctrl + alt + {Left,Down,Up,Right}
+super + alt + {Left,Down,Up,Right}
     bspc node -p {west,south,north,east}
- 
  
 # preselect the ratio
 super + ctrl + {1-9}
@@ -154,12 +153,20 @@ super + ctrl + alt + space
 # contract a window by moving one of its side inward
 #super + alt + shift + {h,j,k,l}
 #   bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# expand a window by moving one of its side outward
+super + alt + {Up,Right}
+   bspc node -z {top 0 -20,right 20 0}
+ 
+# contract a window by moving one of its side inward
+super + alt {Left,Down,Up,Right}
+   bspc node -z {right -20 0,top 0 20}
  
 # move a floating window
 super + ctrl + {Left,Down,Up,Right}
     bspc node -v {-20 0,0 20,0 -20,20 0}
  
 # Custom move/resize
-alt + super + {Left,Down,Up,Right}
-    /home/roma/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
+#alt + super + {Left,Down,Up,Right}
+#    /home/roma/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
 # 
